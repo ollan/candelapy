@@ -27,7 +27,11 @@ To control your lamps(s) you need to find out their MAC adress. Usually they are
 
 Afterwards you can use the script as follows:
 
-    $ python candelapy.py [mac adress] [intensity 0-100]
+    $ python3 candelapy.py [mac adress] [intensity 0-100]
+    
+Start of webserver:
+    
+    $ nohup python3 candelapy_web.py &
     
 The webserver versions can be accessed via Port 5000:
 
@@ -38,11 +42,11 @@ Examples
 
 To turn on the lamp to full intensity:
 
-    $ python candelapy.py F8:24:41:C0:71:A7 100
+    $ python3 candelapy.py F8:24:41:C0:71:A7 100
     
 And to turn off the lamp:
 
-    $ python candelapy.py F8:24:41:C0:71:A7 0
+    $ python3 candelapy.py F8:24:41:C0:71:A7 0
     
 Simple local integration into Home Assistant:
 
