@@ -59,6 +59,7 @@ Simple local integration into Home Assistant:
           command_off: 'python /home/pi/candelapy.py F8:24:41:C0:71:A7 0'
           
 Simple remote integration into Home Assistant:
+
     switch:
       platform: command_line
       switches:
