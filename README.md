@@ -43,16 +43,25 @@ And to turn off the lamp:
 
     $ python candelapy.py F8:24:41:C0:71:A7 0
     
-Simple integration into Home Assistant:
+Simple local integration into Home Assistant:
 
     switch:
       platform: command_line
        switches:
-        light_bathroom:
-          friendly_name: 'Light Bathroom'
+        yeelight_candela:
+          friendly_name: 'Yeelight Candela'
           command_on: 'python /home/pi/candelapy.py F8:24:41:C0:71:A7 100'
           command_off: 'python /home/pi/candelapy.py F8:24:41:C0:71:A7 0'
-    
+          
+Simple remote integration into Home Assistant:
+    switch:
+      platform: command_line
+      switches:
+        yeelight_candela:
+          friendly_name: 'Yeelight Candela'
+          command_on: 'wget http://192.168.1.108:5000/yeelight?intensity=100'
+          command_off: 'wget http://192.168.1.108:5000/yeelight?intensity=0'
+
 Open Tasks
 ----------
 - Activating the Fire-Mode and controlling several lamps (BLE mash) at once is not yet implemented in the official app, thus not reverse engineerable.
