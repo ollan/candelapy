@@ -6,7 +6,8 @@ Requirements
 
 *candelapy* is based on *pygatt*
 
-    $ sudo pip install pygatt
+    $ sudo pip3 install pygatt
+    $ sudo pip3 install pexpect
     
 If you want to use the webserver version you'll need *Flask*
 
@@ -15,7 +16,7 @@ If you want to use the webserver version you'll need *Flask*
 Installation
 ------------
 
-    $ git clone git://github.com/praschak/candelapy.git
+    $ git clone git://github.com/ollan/candelapy.git
     
 Usage
 -----
