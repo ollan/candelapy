@@ -12,19 +12,20 @@ def on():
 
  adapter.start()
  
- try:
-  print("Trying to connect...")
-  device = adapter.connect("F8:24:41:C0:71:A7")
- except:
-  print("Connection Error")
- 
  intensity = int(request.args.get('intensity'))
 
- if intensity > 0:
-  device.char_write_handle(0x001f, bytearray([0x43, 0x40, 0x01])) #on
-  device.char_write_handle(0x001f, bytearray([0x43, 0x42, intensity])) #intensiy
- else:
-  device.char_write_handle(0x001f, bytearray([0x43, 0x40, 0x02])) #off
+  try:
+   print("Trying to connect...")
+   
+   device = adapter.connect("F8:24:41:C0:71:A7")
+   
+   if intensity > 0:
+    device.char_write_handle(0x001f, bytearray([0x43, 0x40, 0x01])) #on
+    device.char_write_handle(0x001f, bytearray([0x43, 0x42, intensity])) #intensiy
+   else:
+    device.char_write_handle(0x001f, bytearray([0x43, 0x40, 0x02])) #off
+ except:
+  print("Connection Error")
 
  adapter.stop()
  
